@@ -18,6 +18,5 @@ pages.set('orderOnline', {
   path: '/order-online', 
   anchorable: true 
 });
-pages.set('login', { name: 'Login', path: '/login', anchorable: true });
 
 export default pages;

@@ -1,9 +1,4 @@
-import {
-  faFacebook,
-  faTwitter,
-  faInstagram,
-  faYoutube
-} from '@fortawesome/free-brands-svg-icons';
+
 import {
   faEnvelope,
   faLocationDot,
@@ -19,13 +14,6 @@ const contacts = [
   { icon: faLocationDot, info: '678 Pisa Ave, Chicago, IL 60611', },
   { icon: faPhone, info: '(312) 593-2744', },
   { icon: faEnvelope, info: 'customer@littlelemon.com', },
-];
-
-const socials = [
-  { icon: faFacebook, name: 'facebook', },
-  { icon: faTwitter, name: 'twitter', },
-  { icon: faInstagram, name: 'instagram', },
-  { icon: faYoutube, name: 'youtube', },
 ];
 
 const navLinks = Array.from(pages.values()).filter(page => page.anchorable);
@@ -59,19 +47,7 @@ const Footer = () => {
           )}
           </address>
         </div>
-        <div className="site-footer-social">
-          <h4>Connect with us</h4>
-          {socials.map((social, index) => 
-            <a 
-              key={index} 
-              href={`https://www.${social.name}.com`} 
-              target="_blank" 
-              rel="noreferrer" 
-            >
-              <FontAwesomeIcon icon={social.icon} size="lg" />
-            </a>
-          )}
-        </div>
+        
       </div>
     </footer>
   );
