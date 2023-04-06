@@ -29,7 +29,7 @@ const customers = [
   {
     fullName: 'Donny Ming',
     image: customer4Image,
-    rating: [1, 1, 1, 1],
+    rating: [1, 1, 1, 1, 1],
     says: `My birthday party was better and even more “delicious” than I had hoped. Staff made everyone feel at home as soon as they walked in the door. I can’t thank you enough for allowing us to use the restaurant instead of having the party at my home. It was a memorable occasion for all of us.`,
   },
 ];
