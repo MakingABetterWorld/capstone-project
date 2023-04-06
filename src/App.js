@@ -16,14 +16,6 @@ const App = () => {
       <Layout>
         <Routes>
           <Route path={pages.get('home').path} element={<Home />} />
-          <Route 
-            path={pages.get('about').path} 
-            element={<UnderConstruction />} 
-          />
-          <Route 
-            path={pages.get('menu').path} 
-            element={<UnderConstruction />} 
-          />
           <Route path={pages.get('bookings').path} element={<Bookings />} />
           <Route 
             path={pages.get('confirmedBooking').path} 
