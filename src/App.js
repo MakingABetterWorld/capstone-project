@@ -33,10 +33,6 @@ const App = () => {
             path={pages.get('orderOnline').path} 
             element={<UnderConstruction />} 
           />
-          <Route 
-            path={pages.get('login').path} 
-            element={<UnderConstruction />} 
-          />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>

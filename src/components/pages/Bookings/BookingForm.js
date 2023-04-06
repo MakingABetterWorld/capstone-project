@@ -10,13 +10,18 @@ const BookingForm = ({
   const defaultTime = availableTimes[0];
   const minimumNumberOfGuests = 1;
   const maximumNumberOfGuests = 10;
+  const fname="";
+  const lname="";
+  const email="";
   const occasions = ['Birthday', 'Anniversary'];
   const invalidDateErrorMessage = 'Please choose a valid date';
   const invalidTimeErrorMessage = 'Please choose a valid time';
   const invalidOccasionErrorMessage = 'Please choose a valid occasion';
   const invalidNumberOfGuestsErrorMessage = 
     'Please enter a number between 1 and 10';
-
+  const [firstname,setFirstname]=useState(fname);
+  const [lastname,setLastname]=useState(lname);
+  const [mailadd,setMailadd]=useState(email);
   const [date, setDate] = useState(minimumDate);
   const [time, setTime] = useState(defaultTime);
   const [
@@ -24,6 +29,7 @@ const BookingForm = ({
     setNumberGuests
   ] = useState(minimumNumberOfGuests);
   const [occasion, setOccasion] = useState(occasions[0]);
+
 
   const isDateValid = () => date !== '';
   const isTimeValid = () => time !== '';
@@ -45,12 +51,49 @@ const BookingForm = ({
 
   const handleFormSubmit = e => {
     e.preventDefault();
-    submitData({ date, time, numberOfGuests, occasion, });
+    submitData({ firstname,lastname,mailadd,date, time, numberOfGuests, occasion, });
   };
 
   return (
     <form onSubmit={handleFormSubmit}>
       <FormField 
+        label="First Name" 
+        htmlFor="place-for-first-name" 
+      >
+        <input 
+          type="text" 
+          id="place-for-first-name" 
+          name="place-for-first-name" 
+          value={fname} 
+          
+          onChange={e => setFirstname(e.target.value)}
+        />
+      </FormField>
+      <FormField
+        label="Last Name" 
+        htmlFor="place-for-last-name" 
+      >
+        <input 
+          type="text" 
+          id="place-for-last-name" 
+          name="place-for-last-name" 
+          value={lname} 
+          
+          onChange={e=>setLastname(e.target.value)}/>
+      </FormField>
+      <FormField
+        label="Email Address" 
+        htmlFor="place-for-email" 
+      >
+        <input 
+          type="email" 
+          id="place-for-email" 
+          name="place-for-email" 
+          value={email} 
+          
+          onChange={e=>setMailadd(e.target.value)}/>
+      </FormField>
+      <FormField
         label="Date" 
         htmlFor="booking-date" 
         hasError={!isDateValid()} 
