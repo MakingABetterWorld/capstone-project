@@ -10,18 +10,15 @@ const BookingForm = ({
   const defaultTime = availableTimes[0];
   const minimumNumberOfGuests = 1;
   const maximumNumberOfGuests = 10;
-  const fname="";
-  const lname="";
-  const email="";
   const occasions = ['Birthday', 'Anniversary'];
   const invalidDateErrorMessage = 'Please choose a valid date';
   const invalidTimeErrorMessage = 'Please choose a valid time';
   const invalidOccasionErrorMessage = 'Please choose a valid occasion';
   const invalidNumberOfGuestsErrorMessage = 
     'Please enter a number between 1 and 10';
-  const [firstname,setFirstname]=useState(fname);
-  const [lastname,setLastname]=useState(lname);
-  const [mailadd,setMailadd]=useState(email);
+  const [firstname,setFirstname]=useState("");
+  const [lastname,setLastname]=useState("");
+  const [mailadd,setMailadd]=useState("");
   const [date, setDate] = useState(minimumDate);
   const [time, setTime] = useState(defaultTime);
   const [
@@ -64,7 +61,7 @@ const BookingForm = ({
           type="text" 
           id="place-for-first-name" 
           name="place-for-first-name" 
-          value={fname} 
+          value={firstname} 
           
           onChange={e => setFirstname(e.target.value)}
         />
@@ -77,7 +74,7 @@ const BookingForm = ({
           type="text" 
           id="place-for-last-name" 
           name="place-for-last-name" 
-          value={lname} 
+          value={lastname} 
           
           onChange={e=>setLastname(e.target.value)}/>
       </FormField>
@@ -89,7 +86,7 @@ const BookingForm = ({
           type="email" 
           id="place-for-email" 
           name="place-for-email" 
-          value={email} 
+          value={mailadd} 
           
           onChange={e=>setMailadd(e.target.value)}/>
       </FormField>
@@ -171,7 +168,7 @@ const BookingForm = ({
         type="submit" 
         disabled={!areAllFieldsValid()}
       >
-        Make your reservation
+        Book Your Table
       </button>
     </form>
   );
